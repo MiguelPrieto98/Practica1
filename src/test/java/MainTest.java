@@ -10,22 +10,20 @@ import com.example.Main;
 
 public class MainTest {
 
+    static final String NOMBREALUMNO = "Escribe el nombre del alumno\n";
+    static final String APELLIDOALUMNO = "Escribe el apellido del alumno\n";
+    static final String EDADALUMNO = "Escribe la edad del alumno\n";
+
     @Test
     public void testInsertarYListarAlumno() {
         try (MockedStatic<JOptionPane> mock = mockStatic(JOptionPane.class)) {
-            // Simular inputs del usuario
-            mock.when(() -> JOptionPane.showInputDialog("Escribe el nombre del alumno\n"))
-                .thenReturn("Miguel");
-            mock.when(() -> JOptionPane.showInputDialog("Escribe el apellido del alumno\n"))
-                .thenReturn("Prieto");
-            mock.when(() -> JOptionPane.showInputDialog("Escribe la edad del alumno\n"))
-                .thenReturn("26");
+            mock.when(() -> JOptionPane.showInputDialog(NOMBREALUMNO)).thenReturn("Miguel");
+            mock.when(() -> JOptionPane.showInputDialog(APELLIDOALUMNO)).thenReturn("Prieto");
+            mock.when(() -> JOptionPane.showInputDialog(EDADALUMNO)).thenReturn("26");
 
-            // Simular salida del listado
-            mock.when(() -> JOptionPane.showMessageDialog(null, "El nombre del Alumno: MiguelEl apellido del alumno: Prieto", "La edad del alumno: 26", 0))
-                .thenAnswer(invocation -> null);
+            mock.when(() -> JOptionPane.showMessageDialog(null, null, null, 0))
+                .thenAnswer(inv -> null);
 
-            // Ejecutar métodos reales
             Main.insertarAlumno();
             Main.listarAlumnos();
         }
