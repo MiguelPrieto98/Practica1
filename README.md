@@ -3,4 +3,4 @@ La parte mas senicilla a sido crear el objeto alumno y el main, la parte de prue
 Herramientas usadas
 -Visual studio code
 -Git hub 
--Copilot para ver los herrores al crear mokito y los test.
+-Copilot para ver los errores al crear mokito y los test.
