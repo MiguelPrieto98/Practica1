@@ -4,3 +4,4 @@ Herramientas usadas
 -Visual studio code
 -Git hub 
 -Copilot para ver los errores al crear mokito y los test.
+-He realizado dos test por que no he sido capaz de hacer funcionar mokito y he echo un test sin el 
