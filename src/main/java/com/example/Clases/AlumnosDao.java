@@ -10,14 +10,6 @@ public class AlumnosDao {
         throw new Exception();
     }
 
-    public static Object insertarAlumno(Object any) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'insertarAlumno'");
-    }
-
-    public static Object listarAlumnos(Object any) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'listarAlumnos'");
-    }
+   
     
 }

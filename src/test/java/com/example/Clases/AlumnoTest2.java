@@ -58,4 +58,3 @@ public class AlumnoTest2 {
         verify(mockAlumno).getEdad();
     }
 }
-
