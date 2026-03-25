@@ -7,32 +7,32 @@ import com.example.model.Alumno;
 public class Main {
 
     private static Alumno estudiante;
-
-    static String nombreAlumno;
-    static String apellidoAlumno;
-    static int edadAlumno = 0;
+    private static final String NOMBRE_ALUMNO = "Escribe el nombre del alumno\n";
+    private static final String APELLIDO_ALUMNO = "Escribe el apellido del alumno\n";
+    private static final String EDAD_ALUMNO = "Escribe la edad del alumno\n";
 
     public static void insertarAlumno() {
-        String NOMBREALUMNO = "Escribe el nombre del alumno\n";
-        String APELLIDOALUMNO = "Escribe el apellido del alumno\n";
-        String EDADALUMNO = "Escribe la edad del alumno\n";
+        String nombreAlumno = JOptionPane.showInputDialog(NOMBRE_ALUMNO);
+        String apellidoAlumno = JOptionPane.showInputDialog(APELLIDO_ALUMNO);
 
-        nombreAlumno = JOptionPane.showInputDialog(NOMBREALUMNO);
-        apellidoAlumno = JOptionPane.showInputDialog(APELLIDOALUMNO);
-        edadAlumno = Integer.parseInt(JOptionPane.showInputDialog(EDADALUMNO));
-        Alumno estudiante = new Alumno(nombreAlumno, apellidoAlumno, edadAlumno);
+        String edadTexto = JOptionPane.showInputDialog(EDAD_ALUMNO);
+        int edadAlumno = Integer.parseInt(edadTexto);
+
+        // AQUÍ ESTABA EL PROBLEMA
+        estudiante = new Alumno(nombreAlumno, apellidoAlumno, edadAlumno);
     }
 
     public static void listarAlumnos() {
-        String NOMBRE = "El nombre del Alumno: ", APELLIDO = "El apellido del alumno: ",
-                EDAD = "La edad del alumno: ";
-        String ERROR = "No hay nigun alumno que listar";
         if (estudiante != null) {
-            JOptionPane.showMessageDialog(null,
-                    NOMBRE + estudiante.getNombre() + APELLIDO + estudiante.getApellidos(),
-                    EDAD + estudiante.getEdad(), 0);
+
+            String mensaje = "Nombre: " + estudiante.getNombre() + "\n"
+                    + "Apellido: " + estudiante.getApellidos() + "\n"
+                    + "Edad: " + estudiante.getEdad();
+
+            JOptionPane.showMessageDialog(null, mensaje, "Datos del alumno", JOptionPane.INFORMATION_MESSAGE);
+
         } else {
-            JOptionPane.showMessageDialog(null, ERROR);
+            JOptionPane.showMessageDialog(null, "No hay ningún alumno que listar");
         }
     }
 
@@ -43,29 +43,31 @@ public class Main {
         final int OPCION_SALIR = 3;
 
         int opcion = 0;
-        while (opcion != 3) {
+
+        while (opcion != OPCION_SALIR) {
+
             String MENU = """
-                                        Selecione una opcion
-                                                1.Insertar Alumno
-                                                2.Listar alumno
-                                                3.Salir
-                                        """;
-            String SALIR = "has salido";
+                    Seleccione una opción:
+                    1. Insertar Alumno
+                    2. Listar alumno
+                    3. Salir
+                    """;
 
-            opcion = Integer.parseInt(JOptionPane.showInputDialog(MENU));
+            String entrada = JOptionPane.showInputDialog(MENU);
+            if (entrada == null) {
+                break; // usuario canceló
+            }
+            opcion = Integer.parseInt(entrada);
+
             switch (opcion) {
-                case OPCION_CREAR_ALUMNO:
+                case OPCION_CREAR_ALUMNO ->
                     insertarAlumno();
-                    break;
-                case OPCION_LISTAR_ALUMNO:
+                case OPCION_LISTAR_ALUMNO ->
                     listarAlumnos();
-                    break;
-                case OPCION_SALIR:
-
-                    JOptionPane.showMessageDialog(null, SALIR);
-                    break;
-                default:
-                    throw new AssertionError();
+                case OPCION_SALIR ->
+                    JOptionPane.showMessageDialog(null, "Has salido");
+                default ->
+                    JOptionPane.showMessageDialog(null, "Opción no válida");
             }
         }
     }
