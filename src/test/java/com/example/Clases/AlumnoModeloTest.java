@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import com.example.model.Alumno;
 
-public class AlumnoTest {
+public class AlumnoModeloTest {
 
     @Test
     public void testConstructorAndGetters() {
