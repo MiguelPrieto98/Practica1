@@ -3,6 +3,8 @@ package com.example.Clases;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
+import com.example.model.Alumno;
+
 public class AlumnoTest {
 
     @Test

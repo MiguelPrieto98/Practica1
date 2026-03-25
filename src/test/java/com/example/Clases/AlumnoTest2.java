@@ -6,6 +6,8 @@ import static org.mockito.Mockito.*;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
+import com.example.model.Alumno;
+
 public class AlumnoTest2 {
 
     @Test

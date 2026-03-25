@@ -1,4 +1,4 @@
-package com.example.Clases;
+package com.example.model;
 
 public class Alumno {
 

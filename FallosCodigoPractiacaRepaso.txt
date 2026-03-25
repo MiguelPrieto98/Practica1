@@ -1,0 +1,33 @@
+	
+La calificación es por la entrega, no por la calidad de la misma.
+
+Markdown muy pobre
+
+paquetes en mayusculas?????
+
+Código sin paquetizar bien???
+
+No se usa Lombok
+
+Devuelves Object?? Y solicitas Object? Esto no se puede hacer:
+
+ public static Object insertarAlumno(Object any) {
+ 
+
+Además métodos estáticos en un DAO??
+
+No se usan interfaces???
+
+Se usa swing en lugar de javafx
+
+mucho código duplciado:
+
+ nombreAlumno=JOptionPane.showInputDialog(NOMBREALUMNO);
+ apellidoAlumno = JOptionPane.showInputDialog(APELLIDOALUMNO);
+ edadAlumno=Integer.parseInt(JOptionPane.showInputDialog(EDADALUMNO));
+
+Código ilegible, sin tabular.
+
+variables definidas dentro del código, no se hace arriba.
+
+Se parece mucho a otras cosas que me han entregado...
