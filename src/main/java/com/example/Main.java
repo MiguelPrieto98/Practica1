@@ -29,7 +29,7 @@ public class Main {
         String ERROR = "No hay nigun alumno que listar";
         if (estudiante != null) {
             JOptionPane.showMessageDialog(null,
-                    NOMBRE + estudiante.getNombre() + APELLIDO + estudiante.getApellido(),
+                    NOMBRE + estudiante.getNombre() + APELLIDO + estudiante.getApellidos(),
                     EDAD + estudiante.getEdad(), 0);
         } else {
             JOptionPane.showMessageDialog(null, ERROR);

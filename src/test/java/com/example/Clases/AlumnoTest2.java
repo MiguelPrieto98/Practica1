@@ -1,10 +1,10 @@
 package com.example.Clases;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.*;
-
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 import com.example.model.Alumno;
 
@@ -15,7 +15,7 @@ public class AlumnoTest2 {
         Alumno alumno = new Alumno("Miguel", "Prieto", 26);
 
         assertEquals("Miguel", alumno.getNombre());
-        assertEquals("Prieto", alumno.getApellido());
+        assertEquals("Prieto", alumno.getApellidos());
         assertEquals(26, alumno.getEdad());
     }
 
@@ -32,7 +32,7 @@ public class AlumnoTest2 {
         Alumno alumno = new Alumno("Miguel", "Prieto", 26);
         alumno.setApellidos("García");
 
-        assertEquals("García", alumno.getApellido());
+        assertEquals("García", alumno.getApellidos());
     }
 
     @Test
@@ -48,15 +48,15 @@ public class AlumnoTest2 {
         Alumno mockAlumno = Mockito.mock(Alumno.class);
 
         when(mockAlumno.getNombre()).thenReturn("MockNombre");
-        when(mockAlumno.getApellido()).thenReturn("MockApellido");
+        when(mockAlumno.getApellidos()).thenReturn("MockApellido");
         when(mockAlumno.getEdad()).thenReturn(99);
 
         assertEquals("MockNombre", mockAlumno.getNombre());
-        assertEquals("MockApellido", mockAlumno.getApellido());
+        assertEquals("MockApellido", mockAlumno.getApellidos());
         assertEquals(99, mockAlumno.getEdad());
 
         verify(mockAlumno).getNombre();
-        verify(mockAlumno).getApellido();
+        verify(mockAlumno).getApellidos();
         verify(mockAlumno).getEdad();
     }
 }

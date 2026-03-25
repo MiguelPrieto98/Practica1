@@ -12,7 +12,7 @@ public class AlumnoTest {
         Alumno alumno = new Alumno("Miguel", "Prieto", 26);
 
         assertEquals("Miguel", alumno.getNombre());
-        assertEquals("Prieto", alumno.getApellido());
+        assertEquals("Prieto", alumno.getApellidos());
         assertEquals(26, alumno.getEdad());
     }
 
@@ -29,7 +29,7 @@ public class AlumnoTest {
         Alumno alumno = new Alumno("Miguel", "Prieto", 26);
         alumno.setApellidos("García");
 
-        assertEquals("García", alumno.getApellido());
+        assertEquals("García", alumno.getApellidos());
     }
 
     @Test

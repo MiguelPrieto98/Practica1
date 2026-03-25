@@ -1,5 +1,8 @@
 package com.example.model;
 
+import lombok.Data;
+
+@Data
 public class Alumno {
 
     private String nombre;
@@ -13,27 +16,4 @@ public class Alumno {
         this.edad = edad;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public String getApellido() {
-        return apellidos;
-    }
-
-    public int getEdad() {
-        return edad;
-    }
-
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
 }
